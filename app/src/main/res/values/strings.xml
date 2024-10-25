@@ -16,4 +16,14 @@
     <string name="arte">Arte</string>
     <string name="deporte">Deporte</string>
     <string name="lectura">Lectura</string>
+    <string name="suscripcion_al_boletin">Suscripcion al boletin</string>
+    <string name="si">Si</string>
+    <string name="guardar">Guardar</string>
+    <string name="resumen_datos">Aqui se mostrara el resumen de tus datos.</string>
+    <string name="nivel_de_satisfaccion">Nivel de satisfacción</string>
+    <string name="_10">10</string>
+    <string name="real">Real</string>
+    <string name="_0">0</string>
+    <string name="alonsorapidoyfurioso">alonsoRapidoyFurioso</string>
+    <string name="no">no</string>
 </resources>
