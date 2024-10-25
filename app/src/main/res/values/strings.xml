@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Ejemplo_01</string>
+    <string name="perfil">Mi Perfil Personal</string>
+    <string name="imagen_de_perfil">Imagen de perfil</string>
+    <string name="nombre">Nombre:</string>
+    <string name="aellidos">Aellidos:</string>
+    <string name="e_mail">E-mail:</string>
+    <string name="genero">Género</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="otro">Otro</string>
+    <string name="pais_de_origen">Pais de origen</string>
+    <string name="nombre_pais">Nombre pais</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="musica">Música</string>
+    <string name="arte">Arte</string>
+    <string name="deporte">Deporte</string>
+    <string name="lectura">Lectura</string>
 </resources>
