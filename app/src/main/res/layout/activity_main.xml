@@ -17,28 +17,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+
             <TextView
                 android:id="@+id/textViewPerfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
+                android:layout_marginStart="72dp"
                 android:layout_marginTop="40dp"
                 android:text="@string/perfil"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-
             <TextView
                 android:id="@+id/textViewNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginStart="-40dp"
+                android:layout_marginTop="68dp"
                 android:text="@string/nombre"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewPerfil"
                 app:layout_constraintTop_toBottomOf="@+id/textViewPerfil"
                 tools:ignore="MissingConstraints" />
 
@@ -46,11 +45,10 @@
                 android:id="@+id/textViewApellidos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="44dp"
                 android:text="@string/aellidos"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewNombre"
                 app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
                 tools:ignore="MissingConstraints" />
 
@@ -58,47 +56,43 @@
                 android:id="@+id/textViewGenero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="192dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/genero"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+                app:layout_constraintStart_toStartOf="@+id/textViewCorreo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCorreo"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textViewPais"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="296dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/pais_de_origen"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+                app:layout_constraintStart_toStartOf="@+id/textViewGenero"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textViewHobies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="404dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/hobbies"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+                app:layout_constraintStart_toStartOf="@+id/textViewPais"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPais"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textViewMin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/_0"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxArte"
                 app:layout_constraintTop_toBottomOf="@+id/textViewSatisfaccion"
                 tools:ignore="MissingConstraints" />
 
@@ -106,35 +100,32 @@
                 android:id="@+id/textViewMax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="348dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginStart="12dp"
                 android:text="@string/_10"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSatisfaccion"
-                tools:ignore="MissingConstraints" />
+                app:layout_constraintBottom_toBottomOf="@+id/seekBarSatisfaccion"
+                app:layout_constraintStart_toEndOf="@+id/seekBarSatisfaccion" />
 
             <TextView
                 android:id="@+id/textViewReal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="332dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginBottom="0dp"
                 android:text="@string/real"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBoxMusica"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSatisfaccion"
+                app:layout_constraintStart_toStartOf="@+id/textViewSatisfaccion"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/textViewSuscripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/suscripcion_al_boletin"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewMin"
                 app:layout_constraintTop_toBottomOf="@+id/seekBarSatisfaccion"
                 tools:ignore="MissingConstraints" />
 
@@ -142,11 +133,11 @@
                 android:id="@+id/textViewSatisfaccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="108dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/nivel_de_satisfaccion"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxArte"
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxArte"
                 tools:ignore="MissingConstraints" />
 
@@ -154,63 +145,59 @@
                 android:id="@+id/textViewCorreo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="108dp"
+                android:layout_marginTop="44dp"
                 android:text="@string/e_mail"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewNombre"
+                app:layout_constraintStart_toStartOf="@+id/textViewApellidos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewApellidos"
                 tools:ignore="MissingConstraints" />
 
             <EditText
                 android:id="@+id/editTextTextNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="-8dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
                 android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNombre"
                 app:layout_constraintStart_toEndOf="@+id/textViewNombre"
-                app:layout_constraintTop_toBottomOf="@+id/textViewPerfil"
                 tools:ignore="LabelFor,MissingConstraints" />
 
             <EditText
                 android:id="@+id/editTextTextApellidos"
-                android:layout_width="212dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-8dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
                 android:text=""
-                app:layout_constraintStart_toEndOf="@+id/textViewApellidos"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextNombre"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewApellidos"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextNombre"
                 tools:ignore="LabelFor,MissingConstraints" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-8dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                app:layout_constraintStart_toEndOf="@+id/textViewCorreo"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextApellidos"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewCorreo"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextApellidos"
                 tools:ignore="LabelFor" />
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="364dp"
                 android:layout_height="45dp"
-                android:layout_marginStart="28dp"
                 android:layout_marginTop="76dp"
                 android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewGenero"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress">
 
                 <RadioButton
@@ -239,99 +226,97 @@
                 android:id="@+id/spinner"
                 android:layout_width="194dp"
                 android:layout_height="46dp"
-                android:layout_marginStart="108dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewPais" />
+                android:layout_marginStart="28dp"
+                android:layout_marginBottom="-10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewPais"
+                app:layout_constraintStart_toEndOf="@+id/textViewPais" />
 
             <CheckBox
                 android:id="@+id/checkBoxLectura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="56dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="40dp"
                 android:text="@string/lectura"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewHobies"
                 app:layout_constraintTop_toBottomOf="@+id/textViewHobies" />
 
             <CheckBox
                 android:id="@+id/checkBoxDeporte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginStart="144dp"
                 android:text="@string/deporte"
-                app:layout_constraintStart_toEndOf="@+id/checkBoxLectura"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHobies" />
+                app:layout_constraintBottom_toBottomOf="@+id/checkBoxLectura"
+                app:layout_constraintStart_toEndOf="@+id/checkBoxLectura" />
 
             <CheckBox
                 android:id="@+id/checkBoxMusica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
+                android:layout_marginStart="168dp"
                 android:layout_marginTop="84dp"
                 android:text="@string/musica"
-                app:layout_constraintStart_toEndOf="@+id/checkBoxLectura"
-                app:layout_constraintTop_toBottomOf="@+id/textViewHobies" />
+                app:layout_constraintBottom_toBottomOf="@+id/checkBoxArte"
+                app:layout_constraintStart_toEndOf="@+id/checkBoxArte"
+                app:layout_constraintVertical_bias="1.0" />
 
             <CheckBox
                 android:id="@+id/checkBoxArte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="56dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/arte"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/checkBoxLectura"
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxLectura" />
 
             <SeekBar
                 android:id="@+id/seekBarSatisfaccion"
-                android:layout_width="294dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewSatisfaccion" />
+                android:layout_width="280dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMin"
+                app:layout_constraintStart_toEndOf="@+id/textViewMin" />
 
             <Switch
                 android:id="@+id/switchSuscripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="68dp"
+                android:layout_marginBottom="0dp"
                 android:text="@string/no"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSuscripcion"
                 app:layout_constraintStart_toEndOf="@+id/textViewSuscripcion"
-                app:layout_constraintTop_toBottomOf="@+id/seekBarSatisfaccion"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Button
                 android:id="@+id/buttonGuardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="144dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="52dp"
                 android:text="@string/guardar"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewSuscripcion"
                 app:layout_constraintTop_toBottomOf="@+id/textViewSuscripcion" />
 
             <TextView
                 android:id="@+id/textViewDatos"
                 android:layout_width="400dp"
                 android:layout_height="127dp"
+                android:layout_marginStart="-160dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/resumen_datos"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/buttonGuardar"
                 app:layout_constraintTop_toBottomOf="@+id/buttonGuardar" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="108dp"
                 android:layout_height="92dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="-30dp"
                 android:contentDescription="@string/alonsorapidoyfurioso"
                 app:layout_constraintStart_toEndOf="@+id/textViewPerfil"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textViewPerfil"
                 app:srcCompat="@mipmap/alonso" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
