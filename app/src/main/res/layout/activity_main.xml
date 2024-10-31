@@ -227,7 +227,7 @@
                 android:layout_width="194dp"
                 android:layout_height="46dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginBottom="-10dp"
+                android:layout_marginBottom="-16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewPais"
                 app:layout_constraintStart_toEndOf="@+id/textViewPais" />
 
