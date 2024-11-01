@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="240dp"
                 android:layout_marginBottom="0dp"
-                android:text="@string/real"
+                android:text=""
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewSatisfaccion"
                 app:layout_constraintStart_toStartOf="@+id/textViewSatisfaccion"
@@ -283,7 +283,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="68dp"
                 android:layout_marginBottom="0dp"
-                android:text="@string/no"
+                android:textOn="SI"
+                android:textOff="NO"
                 app:layout_constraintBottom_toBottomOf="@+id/textViewSuscripcion"
                 app:layout_constraintStart_toEndOf="@+id/textViewSuscripcion"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
