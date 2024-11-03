@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejemplo_01</string>
+    <string name="perfil">My personal profile</string>
+    <string name="imagen_de_perfil">Profile image</string>
+    <string name="nombre">name:</string>
+    <string name="aellidos">lastname:</string>
+    <string name="e_mail">E-mail:</string>
+    <string name="genero">Gender</string>
+    <string name="masculino">Male</string>
+    <string name="femenino">Female</string>
+    <string name="otro">Other</string>
+    <string name="pais_de_origen">Country of origin</string>
+    <string name="nombre_pais">Country name</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="musica">music, </string>
+    <string name="arte">art, </string>
+    <string name="deporte">sports, </string>
+    <string name="lectura">lecture, </string>
+    <string name="suscripcion_al_boletin">Newsletter subscription</string>
+    <string name="si">yes</string>
+    <string name="guardar">Save</string>
+    <string name="resumen_datos">Here the summary of your data will be shown.</string>
+    <string name="nivel_de_satisfaccion">Satisfaction level</string>
+    <string name="_10">10</string>
+    <string name="real">Real</string>
+    <string name="_0">0</string>
+    <string name="alonsorapidoyfurioso">alonsoRapidoyFurioso</string>
+    <string name="no">no</string>
+    <string name="datos">%1$s %2$s with email %3$s of sex %4$s and originally from %5$s, has hobbies %6$s and a satisfaction level of %7$s. %8$s want to subscribe to the newsletter</string>
+    <string name="campos_vacios">THERE ARE REQUIRED FIELDS NOT COMPLETED</string>
+    <string name="formato_mail">THE E-MAIL FORMAT IS INCORRECT</string>
+    <string name="españa">Spain</string>
+    <string name="colombia">Colombia</string>
+    <string name="alemania">Germany</string>
+    <string name="italia">Italy</string>
+    <string name="eeuu">USA</string>
+</resources>

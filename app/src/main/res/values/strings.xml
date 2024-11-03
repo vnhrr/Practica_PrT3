@@ -2,8 +2,8 @@
     <string name="app_name">Ejemplo_01</string>
     <string name="perfil">Mi Perfil Personal</string>
     <string name="imagen_de_perfil">Imagen de perfil</string>
-    <string name="nombre">ombre:</string>
-    <string name="aellidos">pellidos:</string>
+    <string name="nombre">nombre:</string>
+    <string name="aellidos">apellidos:</string>
     <string name="e_mail">E-mail:</string>
     <string name="genero">Género</string>
     <string name="masculino">Masculino</string>

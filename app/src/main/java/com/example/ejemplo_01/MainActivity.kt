@@ -34,20 +34,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var edittextmail:EditText
 
     // Defino el array de los paises y sus imagenes
-    private val pais = arrayOf(
-        getString(R.string.campos_vacios),
-        "Colombia",
-        "Alemania",
-        "Italia",
-        "EEUU"
-    )
-    private val paisImg = intArrayOf(
-        R.mipmap.spain_foreground,
-        R.mipmap.colombia_foreground,
-        R.mipmap.alemania_foreground,
-        R.mipmap.italia_foreground,
-        R.mipmap.eeuu_foreground
-    )
+    private lateinit var pais: Array<String>
+    private lateinit var paisImg: IntArray
     private var paisSelec = ""
 
     // Lista muctable que ira incluyendo o eliminando elementos en funcion de las elecciones en los
@@ -77,6 +65,21 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        pais = arrayOf(
+            getString(R.string.españa),
+            getString(R.string.colombia),
+            getString(R.string.alemania),
+            getString(R.string.italia),
+            getString(R.string.eeuu)
+        )
+        paisImg = intArrayOf(
+            R.mipmap.spain_foreground,
+            R.mipmap.colombia_foreground,
+            R.mipmap.alemania_foreground,
+            R.mipmap.italia_foreground,
+            R.mipmap.eeuu_foreground
+        )
 
         // Instancio los elementos graficos
 
