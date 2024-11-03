@@ -27,4 +27,5 @@
     <string name="alonsorapidoyfurioso">alonsoRapidoyFurioso</string>
     <string name="no">no</string>
     <string name="datos">%1$s %2$s con e-mail %3$s de sexo %4$s y originario de %5$s, tiene como hobbies %6$s y un nivel de satisfaccion de %7$s. %8$s quiere suscribirse al boletin</string>
+    <string name="campos_vacios">HAY CAMPOS OBLIGATORIOS SIN COMPLETAR</string>
 </resources>

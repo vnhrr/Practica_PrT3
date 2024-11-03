@@ -1,6 +1,7 @@
 package com.example.ejemplo_01
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import android.widget.SeekBar
 import android.widget.Spinner
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,13 @@ import androidx.core.view.WindowInsetsCompat
 
 // El metodo onCreate es el unico que es obligado su sobreescritura, heredado de AppCompactActiviti
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+
+    // Campos de nombre, apellidos y email fuera del onCreate para acceder a ellos desde otros
+        // metodos
+    private lateinit var edittextNombre: EditText
+    private lateinit var edittextape: EditText
+    private lateinit var edittextmail:EditText
+
     // Defino el array de los paises y sus imagenes
     private val pais = arrayOf(
         "España",
@@ -53,6 +62,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var switchBoletin: Switch
     var boletin = ""
 
+    // Variable en la que almacenar los datos para cuando se rote el dispositivo
+    private var guardaDatos : Bundle? = null
+
+    // Variable en la que almacenar los datos
+    private var muestraDatos = ""
+    private lateinit var textViewDatos: TextView
+
     // Instanciamos los checkbox, ya que accederemos a ellos desde un metodo fuera del onCreate()
     private lateinit var checkBoxDeportes: CheckBox
     private lateinit var checkBoxArte: CheckBox
@@ -66,10 +82,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         // Instancio los elementos graficos
 
-        // Campos de nombre, apellidos y email
-        val edittextNombre = findViewById<EditText>(R.id.editTextTextNombre)
-        val edittextape = findViewById<EditText>(R.id.editTextTextApellidos)
-        val edittextmail = findViewById<EditText>(R.id.editTextTextEmailAddress)
+        // Nombre, apellidos y E-Mail
+        edittextNombre = findViewById(R.id.editTextTextNombre)
+        edittextape = findViewById(R.id.editTextTextApellidos)
+        edittextmail = findViewById(R.id.editTextTextEmailAddress)
 
         // Seekbar de la satisfaccion y su textView que muestre el valor seleccionado
         val seekbarSatis = findViewById<SeekBar>(R.id.seekBarSatisfaccion)
@@ -131,7 +147,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         // Boton guardar
         val botonGuardar = findViewById<Button>(R.id.buttonGuardar)
         // TextView donde se mostraran los datos seleccionados
-        val textViewDatos = findViewById<TextView>(R.id.textViewDatos)
+        textViewDatos = findViewById(R.id.textViewDatos)
+        // Comprobamos que el metodo de guardado de la instancia este vacio, si no lo esta
+            // restaura el valor del textView que tenia antes de girar el dispositivo
+        if (savedInstanceState != null){
+            muestraDatos = savedInstanceState.getString("datos", "")
+            textViewDatos.text = muestraDatos
+        }
 
         botonGuardar.setOnClickListener{
             // Almacenamos los datos de los edittext
@@ -146,18 +168,30 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 selectedSexo = findViewById(selectedSexoID)
                 sexo = selectedSexo.text.toString()
             }
-            imprimirHobbies()
-            textViewDatos.text = getString(
-                R.string.datos,
-                nombre,
-                apellido,
-                mail,
-                sexo,
-                paisSelec,
-                hobbies,
-                satis,
-                boletin
-            )
+            if ((nombre.toString().equals("")) or (apellido.toString().equals("")) or
+                (mail.toString().equals(""))){
+                comprobarVacios(nombre.toString(), "nombre")
+                comprobarVacios(apellido.toString(), "apellidos")
+                comprobarVacios(mail.toString(), "e-mail")
+                textViewDatos.text = getString(R.string.campos_vacios)
+                textViewDatos.setTextColor(Color.RED)
+            } else {
+                textViewDatos.setTextColor(Color.BLACK)
+                imprimirHobbies()
+                muestraDatos = getString(
+                    R.string.datos,
+                    nombre,
+                    apellido,
+                    mail,
+                    sexo,
+                    paisSelec,
+                    hobbies,
+                    satis,
+                    boletin
+                )
+                guardaDatos?.putString("datos", muestraDatos)
+                textViewDatos.text = muestraDatos.toString()
+            }
         }
     }
 
@@ -299,5 +333,20 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
+    }
+
+    // Metodo que se usa para guardar la instancia, en este caso del texto para que se siga mostrando
+        // a esar de girar la pantalla
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("datos", muestraDatos)
+        super.onSaveInstanceState(outState)
+    }
+
+    fun comprobarVacios(texto: String, campo: String){
+        if (texto.toString().equals("")){
+            Toast.makeText(this, "El campo $campo no puede estar vacio",
+                Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
