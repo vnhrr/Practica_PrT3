@@ -20,11 +20,9 @@ import android.widget.Spinner
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.util.Patterns
 
 // El metodo onCreate es el unico que es obligado su sobreescritura, heredado de AppCompactActiviti
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -37,7 +35,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     // Defino el array de los paises y sus imagenes
     private val pais = arrayOf(
-        "España",
+        getString(R.string.campos_vacios),
         "Colombia",
         "Alemania",
         "Italia",
@@ -139,8 +137,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         // Switch sobre el boletin
         switchBoletin = findViewById(R.id.switchSuscripcion)
-        switchBoletin.textOn = "SI"
-        switchBoletin.textOff = "NO"
+        switchBoletin.textOn = getString(R.string.si)
+        switchBoletin.textOff = getString(R.string.no)
         configurarSwitch()
 
 
@@ -170,11 +168,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
             if ((nombre.toString().equals("")) or (apellido.toString().equals("")) or
                 (mail.toString().equals(""))){
-                comprobarVacios(nombre.toString(), "nombre")
-                comprobarVacios(apellido.toString(), "apellidos")
-                comprobarVacios(mail.toString(), "e-mail")
+                comprobarVacios(nombre.toString(), getString(R.string.nombre))
+                comprobarVacios(apellido.toString(), getString(R.string.aellidos))
+                comprobarVacios(mail.toString(), getString(R.string.e_mail))
                 textViewDatos.text = getString(R.string.campos_vacios)
                 textViewDatos.setTextColor(Color.RED)
+            }
+            else if (!validarMail(mail.toString())){
+                Toast.makeText(this, getString(R.string.formato_mail),
+                    Toast.LENGTH_SHORT).show()
+                textViewDatos.text = getString(R.string.formato_mail)
+                textViewDatos.setTextColor(Color.RED)
+
             } else {
                 textViewDatos.setTextColor(Color.BLACK)
                 imprimirHobbies()
@@ -208,9 +213,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private fun configurarSwitch(){
         switchBoletin.setOnCheckedChangeListener{_, isChecked ->
             if(isChecked){
-                boletin = "SI"
+                boletin = getString(R.string.si)
             } else {
-                boletin = "NO"
+                boletin = getString(R.string.no)
             }
         }
     }
@@ -226,30 +231,30 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         // momento del cambio.
         checkBoxDeportes.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                misHobbies.add("los deportes, ")
+                misHobbies.add(getString(R.string.deporte))
             } else {
-                misHobbies.remove("los deportes, ")
+                misHobbies.remove(getString(R.string.deporte))
             }
         }
         checkBoxMusica.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                misHobbies.add("la musica, ")
+                misHobbies.add(getString(R.string.musica))
             } else {
-                misHobbies.remove("la musica, ")
+                misHobbies.remove(getString(R.string.musica))
             }
         }
         checkBoxArte.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                misHobbies.add("el arte, ")
+                misHobbies.add(getString(R.string.arte))
             } else {
-                misHobbies.remove("el arte, ")
+                misHobbies.remove(getString(R.string.arte))
             }
         }
         checkBoxLectura.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                misHobbies.add("la lectura, ")
+                misHobbies.add(getString(R.string.lectura))
             } else {
-                misHobbies.remove("la lectura, ")
+                misHobbies.remove(getString(R.string.lectura))
             }
         }
     }
@@ -342,11 +347,17 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         super.onSaveInstanceState(outState)
     }
 
+    /**
+     * Compobamos que los campos obligatorios esten rellenados
+     */
     fun comprobarVacios(texto: String, campo: String){
         if (texto.toString().equals("")){
             Toast.makeText(this, "El campo $campo no puede estar vacio",
                 Toast.LENGTH_SHORT).show()
         }
+    }
 
+    fun validarMail(mail:String): Boolean{
+        return Patterns.EMAIL_ADDRESS.matcher(mail.toString()).matches()
     }
 }

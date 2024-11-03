@@ -2,8 +2,8 @@
     <string name="app_name">Ejemplo_01</string>
     <string name="perfil">Mi Perfil Personal</string>
     <string name="imagen_de_perfil">Imagen de perfil</string>
-    <string name="nombre">Nombre:</string>
-    <string name="aellidos">Aellidos:</string>
+    <string name="nombre">ombre:</string>
+    <string name="aellidos">pellidos:</string>
     <string name="e_mail">E-mail:</string>
     <string name="genero">Género</string>
     <string name="masculino">Masculino</string>
@@ -12,10 +12,10 @@
     <string name="pais_de_origen">Pais de origen</string>
     <string name="nombre_pais">Nombre pais</string>
     <string name="hobbies">Hobbies</string>
-    <string name="musica">Música</string>
-    <string name="arte">Arte</string>
-    <string name="deporte">Deporte</string>
-    <string name="lectura">Lectura</string>
+    <string name="musica">la musica, </string>
+    <string name="arte">el arte, </string>
+    <string name="deporte">los deportes, </string>
+    <string name="lectura">la letura, </string>
     <string name="suscripcion_al_boletin">Suscripcion al boletin</string>
     <string name="si">Si</string>
     <string name="guardar">Guardar</string>
@@ -28,4 +28,11 @@
     <string name="no">no</string>
     <string name="datos">%1$s %2$s con e-mail %3$s de sexo %4$s y originario de %5$s, tiene como hobbies %6$s y un nivel de satisfaccion de %7$s. %8$s quiere suscribirse al boletin</string>
     <string name="campos_vacios">HAY CAMPOS OBLIGATORIOS SIN COMPLETAR</string>
+    <string name="formato_mail">El formato de mail es incorrecto</string>
+    <string name="españa">España</string>
+    <string name="colombia">Colombia</string>
+    <string name="alemania">Alemania</string>
+    <string name="italia">Italia</string>
+    <string name="eeuu">EEUU</string>
+
 </resources>
